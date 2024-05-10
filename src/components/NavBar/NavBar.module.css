@@ -1,0 +1,68 @@
+.navContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: space-between;
+  padding: 10px 17px 10px 17px;
+  background-color: #644db5;
+}
+
+.logoAndAppNameContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.appNameDitto {
+  margin: 0px 0px 0px 20px;
+  text-shadow: 3px 3px black;
+  font-family: "Jersey 10", sans-serif;
+  font-size: 50px;
+}
+
+.appNameDeal {
+  margin: 0px;
+  color: #fcd259;
+  text-shadow: 3px 3px black;
+  font-family: "Jersey 10", sans-serif;
+  font-size: 50px;
+}
+
+.avatarAndUserNameContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 85px;
+}
+
+#logout {
+  color: #fcd259;
+  font-size: 45px;
+  text-shadow: 3px 3px black;
+  cursor: pointer;
+}
+
+.userName {
+  text-shadow: 3px 3px black;
+  font-family: "Jersey 10", sans-serif;
+  font-size: 50px;
+  margin: 0px 20px 0px 0px;
+}
+
+.logIn {
+  text-shadow: 3px 3px black;
+  font-family: "Jersey 10", sans-serif;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.signUp {
+  text-shadow: 3px 3px black;
+  font-family: "Jersey 10", sans-serif;
+  font-size: 50px;
+  margin: 0px 0px 0px 20px;
+  cursor: pointer;
+}
+
