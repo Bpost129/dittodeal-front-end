@@ -4,7 +4,8 @@
   align-items: end;
   justify-content: space-between;
   padding: 10px 17px 10px 17px;
-  background-color: #644db5;
+  background-color: #333341;
+  border-bottom: 5px solid #fcd259;
 }
 
 .logoAndAppNameContainer {
@@ -12,6 +13,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .appNameDitto {
@@ -53,15 +55,17 @@
 
 .logIn {
   text-shadow: 3px 3px black;
-  font-family: "Jersey 10", sans-serif;
-  font-size: 50px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 550;
+  font-size: 30px;
   cursor: pointer;
 }
 
 .signUp {
   text-shadow: 3px 3px black;
-  font-family: "Jersey 10", sans-serif;
-  font-size: 50px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 550;
+  font-size: 30px;
   margin: 0px 0px 0px 20px;
   cursor: pointer;
 }

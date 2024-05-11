@@ -77,62 +77,68 @@ const Signup = ({ handleAuthEvt }) => {
     return !(name && email && password && password === passwordConf)
   }
 
+  const handleBackToAllListings = () => {
+    navigate('/')
+  }
+
   return (
-    <main className={styles.container}>
-      <h1>Sign Up</h1>
-      <p className={styles.message}>{message}</p>
-      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.label}>
-          Name
-          <input type="text" value={name} name="name" onChange={handleChange} />
-        </label>
-        <label className={styles.label}>
-          Email
-          <input
-            type="text"
-            value={email}
-            name="email"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          Password
-          <input
-            type="password"
-            value={password}
-            name="password"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          Confirm Password
-          <input
-            type="password"
-            value={passwordConf}
-            name="passwordConf"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          Upload Photo
-          <input 
-            type="file" 
-            name="photo" 
-            onChange={handleChangePhoto}
-            ref={imgInputRef}
-          />
-        </label>
-        <div>
-          <Link to="/">Cancel</Link>
-          <button
-            className={styles.button}
-            disabled={ isFormInvalid() || isSubmitted }
-          >
-            {!isSubmitted ? 'Sign Up' : '🚀 Sending...'}
-          </button>
-        </div>
-      </form>
-    </main>
+    <div className={styles.mainContainer}>
+      <div className={styles.signUpContainer}>
+        <h1>Sign Up</h1>
+        <p className={styles.message}>{message}</p>
+        <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
+          <label className={styles.label}>
+            Name
+            <input className={styles.input} type="text" value={name} name="name" onChange={handleChange} />
+          </label>
+          <label className={styles.label}>
+            Email
+            <input className={styles.input}
+              type="text"
+              value={email}
+              name="email"
+              onChange={handleChange}
+            />
+          </label>
+          <label className={styles.label}>
+            Password
+            <input className={styles.input}
+              type="password"
+              value={password}
+              name="password"
+              onChange={handleChange}
+            />
+          </label>
+          <label className={styles.label}>
+            Confirm Password
+            <input className={styles.input}
+              type="password"
+              value={passwordConf}
+              name="passwordConf"
+              onChange={handleChange}
+            />
+          </label>
+          <label className={styles.label}>
+            Upload Photo
+            <input className={styles.input}
+              type="file" 
+              name="photo" 
+              onChange={handleChangePhoto}
+              ref={imgInputRef}
+            />
+          </label>
+          <div className={styles.buttonContainer}>
+            <p className={styles.cancel} onClick={handleBackToAllListings}>Cancel</p>
+            <button
+              className={styles.signUp}
+              disabled={ isFormInvalid() || isSubmitted }
+            >
+              {!isSubmitted ? 'Sign Up' : '🚀 Sending...'}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   )
 }
 

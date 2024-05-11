@@ -5,14 +5,28 @@ input {
   width: 300px;
 }
 
+
 input[type="file"] {
   padding: 0;
 }
 
-.container {
+.mainContainer {
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
+}
+
+.logInContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 5px solid #fcd259;
+  border-radius: 15px;
+  margin: 20px 0px 0px 0px;
+  padding: 20px;
+  background-color: #333341;
+  font-family: "Quicksand";
 }
 
 .message {
@@ -44,4 +58,42 @@ input[type="file"] {
 
 .form > label:last-of-type {
   margin-bottom: 16px;
+}
+
+.input {
+  border: 5px solid #fcd259;
+  border-radius: 15px;
+  background-color: #333341;
+  color: white;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logIn {
+  font-family: "Quicksand";
+  background-color: #333341;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+.logIn:hover {
+  text-decoration: underline #fcd259;
+}
+
+.cancel {
+  font-family: "Quicksand";
+  border: none;
+  font-size: 20px;
+  color: white;
+  margin: 0px 10px 0px 0px;
+  cursor: pointer;
+}
+
+.cancel:hover {
+  text-decoration: underline #fcd259;
 }
