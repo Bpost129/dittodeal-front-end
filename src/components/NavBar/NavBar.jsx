@@ -9,13 +9,16 @@ const NavBar = ({ user, handleLogout }) => {
   const handleLogIn = () => {
     navigate('/auth/login')
   }
-  const handleSignUp =() => {
+  const handleSignUp = () => {
     navigate('auth/signup')
+  }
+  const handleBackToAllListings = () => {
+    navigate('/')
   }
 
   return (
     <div className={styles.navContainer}>
-      <div className={styles.logoAndAppNameContainer}>
+      <div onClick={handleBackToAllListings} className={styles.logoAndAppNameContainer}>
         <img className={styles.logo} src='src/assets/images/dittodeal.png' alt="DittoDeal Logo" width='85'/>
         <p className={styles.appNameDitto}>Ditto</p>
         <p className={styles.appNameDeal}>Deal</p>
