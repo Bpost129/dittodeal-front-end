@@ -11,7 +11,7 @@ const ProfilePage = ({ user }) => {
 
   useEffect(() => {
     const fetchProfile = async () => {
-      const profileData = await profileService.getProfile(id)
+      const profileData = await profileService.show(id)
       setProfile(profileData)
     }
 
