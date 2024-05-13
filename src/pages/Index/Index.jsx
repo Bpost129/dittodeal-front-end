@@ -12,7 +12,7 @@ const Index = ({ user }) => {
       setListings(listingsData)
     }
     handleGetListings()
-  }, [user])
+  }, [])
 
   return (
     <main className={styles.mainContainer}>
