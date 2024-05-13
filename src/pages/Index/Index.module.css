@@ -1,0 +1,20 @@
+.mainContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.listingContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 5px solid #fcd259;
+  border-radius: 15px;
+  background-color: #333341;
+}
+
+.listingImage {
+  width: 200px;
+  border: 5px solid #fcd259;
+  border-radius: 15px;
+}

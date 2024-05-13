@@ -5,7 +5,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 // pages
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
-import Landing from './pages/Landing/Landing'
+import Index from './pages/Index/Index'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import NewListing from './pages/NewListing/NewListing'
 
@@ -45,7 +45,7 @@ function App() {
     <>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+        <Route path="/" element={<Index user={user} />} />
         <Route
           path="/auth/signup"
           element={<Signup handleAuthEvt={handleAuthEvt} />}

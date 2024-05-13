@@ -19,6 +19,22 @@ async function create(listingFormData) {
   }
 }
 
+async function getListings() {
+  try {
+    const res = await fetch(`${BASE_URL}/listings`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   create,
+  getListings,
 }
