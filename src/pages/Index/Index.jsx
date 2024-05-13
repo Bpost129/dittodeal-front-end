@@ -19,18 +19,20 @@ const Index = ({ user }) => {
       {listings.map(listing => 
       <div className={styles.listingContainer} key={listing._id}>
         <div className={styles.titleAndDateCreated}>
-          <h2>{listing.title}</h2>
-          <h2>{listing.createdAt}</h2>
+          <h2 className={styles.listingCategory}>{listing.category}</h2>
+          <h2 className={styles.listingTitle}>{listing.title}</h2>
         </div>
         <img className={styles.listingImage} src={listing.picture} alt="Listing Picture" />
-        <div>
+        <h2 className={styles.listingCreatedAt}>{listing.createdAt}</h2>
+        <div className={styles.description}>
           <h2 className={styles.descriptionTitle}>Description:</h2>
           <p className={styles.descriptionText}>{listing.description}</p>
         </div>
-        <div>
+        <div className={styles.price}>
           <h2 className={styles.priceTitle}>Price:</h2>
           <p className={styles.priceText}>{listing.price}</p>
         </div>
+        <p className={styles.viewListing}>View Listing</p>
       </div>)}
     </main>
   )
