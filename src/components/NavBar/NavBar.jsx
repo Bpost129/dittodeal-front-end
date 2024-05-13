@@ -1,10 +1,13 @@
 // npm modules
 import { NavLink, useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 import styles from './NavBar.module.css'
 
-const NavBar = ({ user, handleLogout }) => {
+import * as profileService from '../../services/profileService'
 
+const NavBar = ({ user, handleLogout }) => {
+  const [profile, setProfile] = useState({})
   const navigate = useNavigate()
   const handleLogIn = () => {
     navigate('/auth/login')
@@ -15,6 +18,16 @@ const NavBar = ({ user, handleLogout }) => {
   const handleBackToAllListings = () => {
     navigate('/')
   }
+  const handleCreateListing = () => {
+    navigate('/listings/new')
+  }
+  useEffect(() => {
+    const handleGetProfile = async () => {
+      const profileData = await profileService.getProfile(user.profile)
+      setProfile(profileData)
+    }
+    handleGetProfile()
+  }, [user])
 
   return (
     <div className={styles.navContainer}>
@@ -22,6 +35,13 @@ const NavBar = ({ user, handleLogout }) => {
         <img className={styles.logo} src='src/assets/images/dittodeal.png' alt="DittoDeal Logo" width='85'/>
         <p className={styles.appNameDitto}>Ditto</p>
         <p className={styles.appNameDeal}>Deal</p>
+      </div>
+      <div className={styles.otherLinksContainer}>
+        {user ?
+          <p className={styles.createListing} onClick={handleCreateListing}>Create Listing</p>
+          :
+          ''
+        }
       </div>
       <div className={styles.avatarAndUserNameContainer}>
         {!user ?
@@ -32,8 +52,8 @@ const NavBar = ({ user, handleLogout }) => {
         :
         <>
           <p className={styles.userName}>{user.name}</p>
+          <img className={styles.avatar} src={profile.photo} alt="Users Profile Picture" width="65"/>
           <i onClick={handleLogout} id={styles.logout} className="fa-solid fa-door-open"></i>
-          {/* Maybe add inside of the users profile show page if we have one? Or just don't use. <NavLink to="/auth/change-password">Change Password</NavLink> */}
         </>
         }
       </div>
