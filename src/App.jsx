@@ -7,6 +7,7 @@ import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Index from './pages/Index/Index'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import ProfilePage from './pages/ProfilePage/ProfilePage'
 import NewListing from './pages/NewListing/NewListing'
 
 // components
@@ -15,6 +16,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as profileService from './services/profileService'
 import * as listingService from './services/listingService'
 
 // styles
@@ -40,6 +42,7 @@ function App() {
     setListings([newListing, ...listings])
     navigate('/')
   }
+  
 
   return (
     <>
@@ -59,6 +62,13 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <ChangePassword handleAuthEvt={handleAuthEvt} />
+            </ProtectedRoute>
+          }
+        />
+        <Route 
+          path='/profiles/:id' element={
+            <ProtectedRoute user={user}>
+              <ProfilePage user={user} />
             </ProtectedRoute>
           }
         />
