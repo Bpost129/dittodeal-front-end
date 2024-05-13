@@ -34,6 +34,7 @@ const NewListing = (props) => {
           placeholder='Title'
           value={formData.title}
           onChange={handleChange}
+          maxLength="20"
           />
           </label>
           <div className={styles.descriptionInputContainer}>
@@ -47,6 +48,7 @@ const NewListing = (props) => {
           placeholder='Description'
           value={formData.description}
           onChange={handleChange}
+          maxLength="100"
           />
           </div>
           <label className={styles.normalInputLabel} htmlFor="price-input">Price:
