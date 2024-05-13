@@ -8,7 +8,6 @@ import * as profileService from '../../services/profileService'
 
 const NavBar = ({ user, handleLogout }) => {
   const [profile, setProfile] = useState([])
-  console.log(user)
   const navigate = useNavigate()
   const handleLogIn = () => {
     navigate('/auth/login')

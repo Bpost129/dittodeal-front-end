@@ -7,23 +7,40 @@ import styles from './ProfilePage.module.css'
 
 const ProfilePage = ({ user }) => {
   const { id } = useParams()
-  const [profile, setProfile] = useState({})
+  const [profile, setProfile] = useState(null)
+  console.log(profile)
 
   useEffect(() => {
     const fetchProfile = async () => {
-      const profileData = await profileService.show(id)
+      const profileData = await profileService.getProfile(id)
       setProfile(profileData)
     }
 
     fetchProfile()
   }, [id])
 
+  if (!profile) {
+    return (
+      <h1>Loading...</h1>
+    )
+  }
+
   return (
     <div className={styles.profilePage}>
       <h1 className={styles.profileName}>{profile.name}</h1>
       <img className={styles.avatar} src={profile.photo} alt="users avatar" />
       <h3>{user.email}</h3>
-      <div>{profile.favorites}</div>
+      <ul>
+        {profile.reviews.map((fav) =>
+          <li key={fav._id}>{fav.text}</li>
+        )}
+      </ul>
+
+      <ul>
+        {profile.favorites.map((fav) => 
+          <li key={fav._id}>{fav.name}</li>
+        )}
+      </ul>
     </div>
   )
 }
