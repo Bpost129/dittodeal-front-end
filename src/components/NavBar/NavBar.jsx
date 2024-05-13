@@ -1,5 +1,5 @@
 // npm modules
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 import styles from './NavBar.module.css'
@@ -20,6 +20,9 @@ const NavBar = ({ user, handleLogout }) => {
   }
   const handleCreateListing = () => {
     navigate('/listings/new')
+  }
+  const handleUserProfile = () => {
+    navigate(`/profiles/${user.profile}`)
   }
   useEffect(() => {
     const handleGetProfile = async () => {
@@ -51,8 +54,8 @@ const NavBar = ({ user, handleLogout }) => {
         </>
         :
         <>
-          <p className={styles.userName}>{user.name}</p>
-          <img className={styles.avatar} src={profile.photo} alt="Users Profile Picture" width="65"/>
+          <p className={styles.userName}  onClick={handleUserProfile}>{user.name}</p>
+          <img className={styles.avatar} src={profile.photo} alt="Users Profile Picture" />
           <i onClick={handleLogout} id={styles.logout} className="fa-solid fa-door-open"></i>
         </>
         }

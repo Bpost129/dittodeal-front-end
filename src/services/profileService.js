@@ -47,4 +47,15 @@ async function getProfile(profileId) {
   }
 }
 
-export { getAllProfiles, addPhoto, getProfile }
+async function show(id) {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}`, {
+      headers: {'Authorization': `Bearer ${tokenService.getToken()}`},
+    })
+    return res.json()
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export { getAllProfiles, addPhoto, getProfile, show }
