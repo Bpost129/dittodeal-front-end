@@ -7,7 +7,8 @@ import styles from './NavBar.module.css'
 import * as profileService from '../../services/profileService'
 
 const NavBar = ({ user, handleLogout }) => {
-  const [profile, setProfile] = useState({})
+  const [profile, setProfile] = useState([])
+  console.log(user)
   const navigate = useNavigate()
   const handleLogIn = () => {
     navigate('/auth/login')
@@ -26,11 +27,13 @@ const NavBar = ({ user, handleLogout }) => {
   }
   useEffect(() => {
     const handleGetProfile = async () => {
-      const profileData = await profileService.getProfile(user.profile)
-      setProfile(profileData)
+      if (user) {
+        const profileData = await profileService.getProfile(user.profile)
+        setProfile(profileData)
+      }
     }
     handleGetProfile()
-  }, [user])
+  }, [])
 
   return (
     <div className={styles.navContainer}>
