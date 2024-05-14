@@ -9,13 +9,13 @@ const ReviewCard = ({ review, user, handleDeleteReview, id }) => {
   return (
     <div className={styles.reviewCard}>
       <div className={styles.authorDiv}>
-        <img src={review.author.photo} alt="users avatar" className={styles.avatar} />
+        <img src={review.author?.photo} alt="users avatar" className={styles.avatar} />
         <div className={styles.nameAndDate}>
           <div>
-            <h3 className={styles.authorName}>{review.author.name}</h3>
+            <h3 className={styles.authorName}>{review.author?.name}</h3>
             <p className={styles.reviewCreatedAt}>{`${(new Date(review.createdAt).toDateString())}`}</p>
           </div>
-          {review.author._id === user.profile && 
+          {review.author?._id === user.profile && 
             <>
               {/* <NavLink to={`/blogs/${blogId}/comments/edit`} state={comment}><Icon category='Edit' /></NavLink> */}
               <button onClick={() => handleDeleteReview(id, review._id)} className={styles.deleteButton}>Delete</button>

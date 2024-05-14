@@ -12,7 +12,7 @@ const ListingCard = ({ listing }) => {
           <h2 className={styles.listingCategory}>{listing.category}</h2>
           <h2 className={styles.listingTitle}>{listing.title}</h2>
         </div>
-        <img className={styles.listingImage} src={listing.photos[0]} alt="Listing Picture" />
+        <div className={styles.listingImage} style={{backgroundImage: `url(${listing.photos[0]})`}} alt="Listing Picture" ></div>
         <h2 className={styles.listingCreatedAt}>{`Created On: ${(new Date(listing.createdAt).toDateString())}`}</h2>
         <div className={styles.bottomContainer}>
           <div className={styles.description}>
