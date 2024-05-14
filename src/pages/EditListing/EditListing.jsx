@@ -1,12 +1,9 @@
 // npm modules
-import { useState, useEffect } from 'react'
-import { useParams, useLocation } from 'react-router-dom'
-
-import * as listingService from '../../services/listingService'
+import { useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 // css
 import styles from './EditListing.module.css'
-
 
 const EditListing = (props) => {
   const { state } = useLocation()
