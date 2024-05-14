@@ -8,21 +8,27 @@ const ListingCard = ({ listing }) => {
   return (
     <main className={styles.mainContainer}> 
       <div className={styles.listingContainer} key={listing._id}>
-        <div className={styles.titleAndDateCreated}>
+        <div className={styles.titleAndCategory}>
           <h2 className={styles.listingCategory}>{listing.category}</h2>
           <h2 className={styles.listingTitle}>{listing.title}</h2>
         </div>
         <img className={styles.listingImage} src={listing.photos[0]} alt="Listing Picture" />
-        <h2 className={styles.listingCreatedAt}>{listing.createdAt}</h2>
-        <div className={styles.description}>
-          <h2 className={styles.descriptionTitle}>Description:</h2>
-          <p className={styles.descriptionText}>{listing.description}</p>
+        <h2 className={styles.listingCreatedAt}>{`Created On: ${(new Date(listing.createdAt).toDateString())}`}</h2>
+        <div className={styles.bottomContainer}>
+          <div className={styles.description}>
+            <h2 className={styles.descriptionTitle}>Description:</h2>
+            <p className={styles.descriptionText}>{listing.description}</p>
+          </div>
+          <div className={styles.priceAndViewListingContainer}>
+            <div className={styles.priceContainer}>
+              <h2 className={styles.priceTitle}>Price:</h2>
+              <p className={styles.priceText}>{`$${listing.price}`}</p>
+            </div>
+            <div className={styles.viewListingContainer}>
+              <p className={styles.viewListing} onClick={() => navigate(`/listings/${listing._id}`)}>View Listing</p>
+            </div>
+          </div>
         </div>
-        <div className={styles.price}>
-          <h2 className={styles.priceTitle}>Price:</h2>
-          <p className={styles.priceText}>{listing.price}</p>
-        </div>
-        <p className={styles.viewListing} onClick={() => navigate(`/listings/${listing._id}`)}>View Listing</p>
       </div>
     </main>
   )
