@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams, NavLink } from "react-router-dom"
+import { useParams, NavLink, useNavigate } from "react-router-dom"
 
 import * as listingService from '../../services/listingService'
 
@@ -10,11 +10,11 @@ import styles from './ListingDetails.module.css'
 const ListingDetails = (props) => {
   const { listingId } = useParams()
   const [listing, setListing] = useState(null)
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
-  // const handleEdit = () => {
-  //   navigate(`/listings/${listingId}/edit`)
-  // }
+  const handleShowProfile = () => {
+    navigate(`/profiles/${listing.author._id}`)
+  }
 
   useEffect(() => {
     const fetchListing = async () => {
@@ -34,13 +34,14 @@ const ListingDetails = (props) => {
   return (
     <main className={styles.mainContainer}>
       <ListingCard key={listing._id} listing={listing} />
+      <p onClick={handleShowProfile} className={styles.name}>{listing.author.name}</p>
       {listing.author._id === props.user.profile &&
-        <>
-          <NavLink to={`/listings/${listingId}/edit`} state={listing}>
+        <div className={styles.editButtons}>
+          <NavLink to={`/listings/${listingId}/edit`} state={listing} className={styles.edit}>
             EDIT
           </NavLink>
-          <button onClick={() => props.handleDeleteListing(listingId)}>DELETE</button>
-        </>
+          <button onClick={() => props.handleDeleteListing(listingId)} className={styles.delete}>DELETE</button>
+        </div>
       }
     </main>
   )

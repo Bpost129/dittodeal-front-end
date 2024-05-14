@@ -1,10 +1,10 @@
 // import { useState } from "react"
-import { useParams } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
 
 import styles from './ReviewCard.module.css'
 
-const ReviewCard = ({ review, user, handleDeleteReview }) => {
-  const { id } = useParams()
+const ReviewCard = ({ review, user, handleDeleteReview, id }) => {
+  // const { id } = useParams()
 
   return (
     <div className={styles.reviewCard}>

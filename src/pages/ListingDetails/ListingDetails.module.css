@@ -1,0 +1,35 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.editButtons {
+  margin: 10px;
+}
+
+.edit {
+  background: rgb(206,206,206);
+  background: linear-gradient(180deg, rgba(206,206,206,1) 0%, rgba(225,225,225,1) 50%, rgba(148,148,148,1) 100%);
+  border: 2px solid rgb(131, 131, 131);
+  border-radius: 20px;
+  text-decoration: none;
+  padding: 4px 10px;
+  margin-right: 10px;
+  color: black;
+}
+
+.delete {
+  border: 2px solid #fcd259;
+  background: rgb(221,210,1);
+  background: linear-gradient(180deg, rgba(221,210,1,1) 0%, rgba(236,217,1,1) 50%, rgba(148,148,1,1) 100%);
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.name {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
