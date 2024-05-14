@@ -44,6 +44,17 @@
   margin: 5px;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.listingTitle:hover span {
+  display: inline-block;
+  animation-name: scroll-text;
+  animation-duration: 7s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
 }
 
 .listingImage {
@@ -125,4 +136,18 @@
   border-bottom: 3px solid rgb(131, 131, 131);
 }
 
+@keyframes scroll-text {
+  0% {
+    transform: translateX(0%);
+  }
+  90% {
+    transform: translateX(-100%);
+  }
+  95% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
 

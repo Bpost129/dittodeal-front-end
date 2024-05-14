@@ -83,7 +83,7 @@ const NewListing = (props) => {
             <option value="Office Supplies">Office Supplies</option>
             <option value="Pet Supplies">Pet Supplies</option>
             <option value="Sporting Goods">Sporting Goods</option>
-            <option value="Toys And Games">Toys And Games</option>
+            <option value="Toys & Games">Toys & Games</option>
           </select>
           </label>
           <label className={styles.normalInputLabel} htmlFor="photos-input">Photos:
