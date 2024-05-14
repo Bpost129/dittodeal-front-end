@@ -1,0 +1,56 @@
+.reviewCard {
+  width: 300px;
+  background-color: rgba(110, 110, 110, .5);
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+
+}
+
+.avatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 2px solid #fcd259;
+  margin: 0 10px 0 0;
+  box-shadow: 3px 3px black;
+}
+
+.nameAndDate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.authorDiv {
+  display: flex;
+  margin-top: 5px
+}
+
+.authorName {
+  margin: 0 0;
+}
+
+.reviewCreatedAt {
+  font-size: 12px;
+}
+
+.reviewText {
+  margin: 10px 0 10px 46px;
+  font-size: 18px;
+}
+
+.deleteButton {
+  width: 55px;
+  height: 22px;
+  border-radius: 20px;
+  margin-top: 5px;
+  border: 2px solid #fcd259;
+  background: rgb(221,210,1);
+  background: linear-gradient(180deg, rgba(221,210,1,1) 0%, rgba(236,217,1,1) 50%, rgba(148,148,1,1) 100%);
+  /* background: rgb(206,206,206);
+  background: linear-gradient(180deg, rgba(206,206,206,1) 0%, rgba(225,225,225,1) 50%, rgba(148,148,148,1) 100%); */
+  font-weight: 500;
+  font-size: 12px;
+}

@@ -1,9 +1,10 @@
 .mainContainer {
   display: flex;
   align-items: center;
-  flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  width: 2000px;
+  margin: 0 auto;
 }
 
 .listingContainer {
