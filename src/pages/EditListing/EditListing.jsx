@@ -1,19 +1,20 @@
-// css
-import styles from './NewListing.module.css'
-
 // npm modules
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useParams, useLocation } from 'react-router-dom'
 
-const NewListing = (props) => {
-  const [formData, setFormData] = useState({
-    title: '',
-    text: '',
-    category: 'Vehicles'
-  })
+import * as listingService from '../../services/listingService'
+
+// css
+import styles from './EditListing.module.css'
+
+
+const EditListing = (props) => {
+  const { state } = useLocation()
+  const [formData, setFormData] = useState(state)
 
   const handleSubmit = evt => {
     evt.preventDefault()
-    props.handleAddListing(formData)
+    props.handleUpdateListing(formData)
   }
 
   const handleChange = evt => {
@@ -23,7 +24,7 @@ const NewListing = (props) => {
   return ( 
     <div className={styles.mainContainer}>
       <div className={styles.newListingContainer}>
-        <h1 className={styles.createListingTitle}>Create A New Listing</h1>
+        <h1 className={styles.createListingTitle}>Edit Listing</h1>
         <form className={styles.newListingForm} onSubmit={handleSubmit}>
           <label className={styles.normalInputLabel} htmlFor="title-input">Title:
           <input className={styles.normalInput}
@@ -97,11 +98,11 @@ const NewListing = (props) => {
           onChange={handleChange}
           />
           </label>
-          <button className={styles.submitButton} type="submit">Create Listing</button>
+          <button className={styles.submitButton} type="submit">Submit</button>
         </form>
       </div>
     </div>
   );
 }
 
-export default NewListing;
+export default EditListing;
