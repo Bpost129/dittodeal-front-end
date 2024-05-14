@@ -1,28 +1,18 @@
-// css
-import styles from './Index.module.css'
-import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-import * as listingService from '../../services/listingService'
+import styles from './ListingCard.module.css'
 
-const Index = ({ user }) => {
-  const [listings, setListings] = useState([])
-  useEffect(() => {
-    const handleGetListings = async () => {
-      const listingsData = await listingService.getListings()
-      setListings(listingsData)
-    }
-    handleGetListings()
-  }, [])
-
+const ListingCard = ({ listing }) => {
+  const navigate = useNavigate()
+  
   return (
-    <main className={styles.mainContainer}>
-      {listings.map(listing => 
+    <main className={styles.mainContainer}> 
       <div className={styles.listingContainer} key={listing._id}>
         <div className={styles.titleAndDateCreated}>
           <h2 className={styles.listingCategory}>{listing.category}</h2>
           <h2 className={styles.listingTitle}>{listing.title}</h2>
         </div>
-        <img className={styles.listingImage} src={listing.picture} alt="Listing Picture" />
+        <img className={styles.listingImage} src={listing.photos[0]} alt="Listing Picture" />
         <h2 className={styles.listingCreatedAt}>{listing.createdAt}</h2>
         <div className={styles.description}>
           <h2 className={styles.descriptionTitle}>Description:</h2>
@@ -32,10 +22,10 @@ const Index = ({ user }) => {
           <h2 className={styles.priceTitle}>Price:</h2>
           <p className={styles.priceText}>{listing.price}</p>
         </div>
-        <p className={styles.viewListing}>View Listing</p>
-      </div>)}
+        <p className={styles.viewListing} onClick={() => navigate(`/listings/${listing._id}`)}>View Listing</p>
+      </div>
     </main>
   )
 }
 
-export default Index
+export default ListingCard
