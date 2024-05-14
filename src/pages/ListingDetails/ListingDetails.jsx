@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams, useNavigate, NavLink } from "react-router-dom"
+import { useParams, NavLink } from "react-router-dom"
 
 import * as listingService from '../../services/listingService'
 
@@ -10,7 +10,7 @@ import styles from './ListingDetails.module.css'
 const ListingDetails = (props) => {
   const { listingId } = useParams()
   const [listing, setListing] = useState(null)
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   // const handleEdit = () => {
   //   navigate(`/listings/${listingId}/edit`)

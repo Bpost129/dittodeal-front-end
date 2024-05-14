@@ -7,7 +7,7 @@ import * as listingService from '../../services/listingService'
 
 import styles from './AllListings.module.css'
 
-const Index = ({ user }) => {
+const Index = () => {
   const [listings, setListings] = useState([])
 
   useEffect(() => {
