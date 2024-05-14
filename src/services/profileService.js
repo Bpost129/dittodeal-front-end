@@ -47,5 +47,41 @@ async function getProfile(profileId) {
   }
 }
 
+async function createReview(id, reviewFormData) {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}/reviews`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(reviewFormData)
+    })
+    return res.json()
+  } catch (err) {
+    console.log(err)
+  }
+}
 
-export { getAllProfiles, addPhoto, getProfile }
+async function deleteReview(id, reviewId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}/reviews/${reviewId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+      }
+    })
+    return res.json()
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export { 
+  getAllProfiles, 
+  addPhoto, 
+  getProfile,
+  createReview,
+  deleteReview,
+
+}
