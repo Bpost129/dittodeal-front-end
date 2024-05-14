@@ -76,7 +76,7 @@ const NewListing = (props) => {
             <option value="Apparel">Apparel</option>
             <option value="Electronics">Electronics</option>
             <option value="Entertainment">Entertainment</option>
-            <option value="Garden And Outdoor">Garden And Outdoor</option>
+            <option value="Garden & Outdoor">Garden & Outdoor</option>
             <option value="Home Goods">Home Goods</option>
             <option value="Home Improvement">Home Improvement</option>
             <option value="Music">Music</option>
