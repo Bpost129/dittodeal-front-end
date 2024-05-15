@@ -9,6 +9,10 @@
 
 ## DittoDeal Link Here
 
+## Contributors
+[Brandon Sears](https://github.com/bS-ui)
+[Billy Post](https://github.com/Bpost129)
+
 ## Credits
 Scrolling title bar implementation found [here](https://codepen.io/stantonl33/pen/QzMLye)
 
