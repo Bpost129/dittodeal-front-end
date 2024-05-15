@@ -40,14 +40,6 @@ const ProfilePage = ({ user }) => {
   }
 
   return (
-    // <div className={styles.profilePage}>
-    //   <h1 className={styles.profileName}>{profile.name}</h1>
-    //   <img className={styles.avatar} src={profile.photo} alt="users avatar" />
-    //   <NewReview handleAddReview={handleAddReview} />
-    //   <div className={styles.reviews}>
-    //     <Reviews profile={profile} user={user} id={id} handleDeleteReview={handleDeleteReview} />
-    //   </div>
-    // </div>
     <div className={styles.mainContainer}>
       <div className={styles.profileContainer}>
         <div className={styles.imageAndName}>
@@ -98,7 +90,6 @@ const ProfilePage = ({ user }) => {
               </div>
             )}
           </div>
-
         </div>
       </div>
     </div>
