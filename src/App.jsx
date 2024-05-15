@@ -12,6 +12,7 @@ import ProfilePage from './pages/ProfilePage/ProfilePage'
 import NewListing from './pages/NewListing/NewListing'
 import ListingDetails from './pages/ListingDetails/ListingDetails'
 import EditListing from './pages/EditListing/EditListing'
+import EditReview from './pages/EditReview/EditReview'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -104,6 +105,13 @@ function App() {
           path="/listings/:listingId/edit" element={
             <ProtectedRoute user={user}>
               <EditListing handleUpdateListing={handleUpdateListing} />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/profiles/:id/reviews/edit" element={
+            <ProtectedRoute user={user}>
+              <EditReview />
             </ProtectedRoute>
           } 
         />

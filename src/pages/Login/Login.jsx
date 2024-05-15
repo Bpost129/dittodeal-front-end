@@ -1,6 +1,6 @@
 // npm modules
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 // services
 import * as authService from '../../services/authService'
@@ -43,10 +43,6 @@ const LoginPage = ({ handleAuthEvt }) => {
     return !(email && password)
   }
 
-  const handleBackToAllListings = () => {
-    navigate('/')
-  }
-
   return (
     <div className={styles.mainContainer}>
       <div className={styles.logInContainer}>
@@ -72,7 +68,7 @@ const LoginPage = ({ handleAuthEvt }) => {
             />
           </label>
           <div className={styles.buttonContainer}>
-            <p onClick={handleBackToAllListings} className={styles.cancel}>Cancel</p>
+            <NavLink to={`/`} className={styles.cancel}>Cancel</NavLink>
             <button className={styles.logIn} disabled={isFormInvalid()}>Log In</button>
           </div>
         </form>
