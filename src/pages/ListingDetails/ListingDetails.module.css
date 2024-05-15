@@ -4,9 +4,129 @@
   align-items: center;
 }
 
-.editButtons {
-  margin: 10px;
+.listingContainer {
+  /* margin: 15px; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 5px solid #fcd259;
+  border-radius: 15px;
+  margin: 20px 0px 0px 0px;
+  padding: 20px;
+  background-color: #333341;
+  font-family: "Quicksand";
+  width: 600px;
 }
+
+.sellerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.sellerName {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* .sellerButtons {
+
+} */
+
+.headingContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.listingImage {
+  background-color: #fcd259;
+  padding: 8px 8px 6px 8px;
+  border-radius: 10px;
+}
+
+.listingImageBg {
+  background-color: #80ce6a;
+  padding: 5px 5px 2px 5px;
+  border-radius: 5px;
+}
+
+.titleAndInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  padding: 5px 10px;
+  border-radius: 15px;
+  background-color: rgba(252, 210, 89, .3);
+  width: 200px;
+  text-align: center;
+}
+
+.listingCategory {
+  padding: 8px 20px;
+  border-radius: 12px;
+  background-color: rgba(211, 89, 252, 0.3);
+}
+
+.priceContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* width: 200px; */
+}
+
+.createdContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px;
+  border-radius: 15px;
+  background-color: rgba(184, 252, 89, 0.3);
+  width: 200px;
+  
+}
+
+.info h2, .info h3 {
+  margin: 5px 0;
+}
+
+.descriptionText {
+  width: 500px;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: rgba(89, 195, 252, 0.3);
+}
+
+.reviewCard {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: rgba(159, 159, 159, 0.3);
+  width: 200px;
+  text-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.allReviews {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 750px;
+}
+
+
 
 .mainContainer a {
   border-radius: 20px;
@@ -19,6 +139,7 @@
   text-shadow: none;
   color: black;
   padding: 5px 12px;
+  margin: 0 8px;
 }
 
 .delete {
@@ -31,8 +152,7 @@
 }
 
 .name {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 600;
-  margin-bottom: 10px;
   cursor: pointer;
 }
