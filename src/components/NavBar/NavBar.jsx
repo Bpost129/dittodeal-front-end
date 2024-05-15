@@ -1,10 +1,8 @@
-// npm modules
 import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-
 import styles from './NavBar.module.css'
-
 import * as profileService from '../../services/profileService'
+import logo from '../../assets/images/dittodeal.png'
 
 const NavBar = ({ user, handleLogout }) => {
   const [profile, setProfile] = useState([])
@@ -20,7 +18,7 @@ const NavBar = ({ user, handleLogout }) => {
   return (
     <div className={styles.navContainer}>
       <NavLink to={`/`} className={styles.logoAndAppNameContainer}>
-        <img className={styles.logo} src='src/assets/images/dittodeal.png' alt="DittoDeal Logo" width='85'/>
+        <img className={styles.logo} src={logo} alt="DittoDeal Logo" width='85'/>
         <p className={styles.appNameDitto}>Ditto</p>
         <p className={styles.appNameDeal}>Deal</p>
       </NavLink>

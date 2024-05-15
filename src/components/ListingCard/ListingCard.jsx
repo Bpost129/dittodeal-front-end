@@ -2,6 +2,19 @@ import { useNavigate } from 'react-router-dom'
 
 import styles from './ListingCard.module.css'
 
+import vehicles from '../../assets/images/vehicles.png'
+import apparel from '../../assets/images/apparel.png'
+import electronics from '../../assets/images/electronics.png'
+import entertainment from '../../assets/images/entertainment.png'
+import garden_and_outdoor from '../../assets/images/garden_and_outdoor.png'
+import home_goods from '../../assets/images/home_goods.png'
+import home_improvement from '../../assets/images/home_improvement.png'
+import music from '../../assets/images/music.png'
+import office_supplies from '../../assets/images/office_supplies.png'
+import pet_supplies from '../../assets/images/pet_supplies.png'
+import sporting_goods from '../../assets/images/sporting_goods.png'
+import toys_and_games from '../../assets/images/toys_and_games.png'
+
 const ListingCard = ({ listing }) => {
   const navigate = useNavigate()
   
@@ -10,18 +23,18 @@ const ListingCard = ({ listing }) => {
       <div 
         className={styles.listingContainer} 
         key={listing._id} 
-        style={listing.category === "Vehicles" ? {backgroundImage: "url(" + "src/assets/images/vehicles.png" + ")"} 
-        : listing.category === "Apparel" ? {backgroundImage: "url(" + "src/assets/images/apparel.png" + ")"}
-        : listing.category === "Electronics" ? {backgroundImage: "url(" + "src/assets/images/electronics.png" + ")"}
-        : listing.category === "Entertainment" ? {backgroundImage: "url(" + "src/assets/images/entertainment.png" + ")"}
-        : listing.category === "Garden & Outdoor" ? {backgroundImage: "url(" + "src/assets/images/garden_and_outdoor.png" + ")"}
-        : listing.category === "Home Goods" ? {backgroundImage: "url(" + "src/assets/images/home_goods.png" + ")"}
-        : listing.category === "Home Improvement" ? {backgroundImage: "url(" + "src/assets/images/home_improvement.png" + ")"}
-        : listing.category === "Music" ? {backgroundImage: "url(" + "src/assets/images/music.png" + ")"}
-        : listing.category === "Office Supplies" ? {backgroundImage: "url(" + "src/assets/images/office_supplies.png" + ")"}
-        : listing.category === "Pet Supplies" ? {backgroundImage: "url(" + "src/assets/images/pet_supplies.png" + ")"}
-        : listing.category === "Sporting Goods" ? {backgroundImage: "url(" + "src/assets/images/sporting_goods.png" + ")"}
-        : {backgroundImage: "url(" + "src/assets/images/toys_and_games.png" + ")"}
+        style={listing.category === "Vehicles" ? {backgroundImage: `url(${vehicles})`} 
+        : listing.category === "Apparel" ? {backgroundImage: `url(${apparel})`} 
+        : listing.category === "Electronics" ? {backgroundImage: `url(${electronics})`} 
+        : listing.category === "Entertainment" ? {backgroundImage: `url(${entertainment})`} 
+        : listing.category === "Garden & Outdoor" ? {backgroundImage: `url(${garden_and_outdoor})`} 
+        : listing.category === "Home Goods" ? {backgroundImage: `url(${home_goods})`} 
+        : listing.category === "Home Improvement" ? {backgroundImage: `url(${home_improvement})`} 
+        : listing.category === "Music" ? {backgroundImage: `url(${music})`} 
+        : listing.category === "Office Supplies" ? {backgroundImage: `url(${office_supplies})`} 
+        : listing.category === "Pet Supplies" ? {backgroundImage: `url(${pet_supplies})`} 
+        : listing.category === "Sporting Goods" ? {backgroundImage: `url(${sporting_goods})`} 
+        : {backgroundImage: `url(${toys_and_games})`} 
       }>
         <div className={styles.titleAndCategory}>
           <h2 className={styles.listingCategory}>{listing.category}</h2>
