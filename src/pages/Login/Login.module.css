@@ -74,12 +74,16 @@ input[type="file"] {
 }
 
 .logIn {
-  font-family: "Quicksand";
+  text-shadow: 3px 3px black;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 550;
+  cursor: pointer;
+  text-decoration: none;
   background-color: #333341;
   border: none;
   font-size: 20px;
   color: white;
-  cursor: pointer;
+  padding: 0px;
 }
 .logIn:hover {
   text-decoration: underline #fcd259;
@@ -90,7 +94,7 @@ input[type="file"] {
   border: none;
   font-size: 20px;
   color: white;
-  margin: 0px 10px 0px 0px;
+  margin: 0px 20px 0px 0px;
   cursor: pointer;
 }
 

@@ -16,16 +16,15 @@
   box-shadow: 3px 3px black;
 }
 
-.nameAndDate {
+.infoAndButtonContainer {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   width: 100%;
 }
 
 .authorDiv {
   display: flex;
-  margin-top: 5px
+  /* margin-top: 5px */
 }
 
 .authorName {
@@ -54,3 +53,30 @@
   font-weight: 500;
   font-size: 12px;
 }
+
+.nameAndDate {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.editButton {
+  width: 51px;
+  height: 18px;
+  border-radius: 20px;
+  border: 2px solid rgb(131, 131, 131);
+  background: rgb(206,206,206);
+  background: linear-gradient(180deg, rgba(206,206,206,1) 0%, rgba(225,225,225,1) 50%, rgba(148,148,148,1) 100%);
+  font-weight: 500;
+  font-size: 12px;
+  text-align: center;
+  text-shadow: none;
+  color: black;
+}
+

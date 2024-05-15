@@ -111,6 +111,11 @@
   margin: 20px 0px 20px 0px;
 }
 
+.priceText {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .viewListing {
   display: flex;
   flex-direction: column;

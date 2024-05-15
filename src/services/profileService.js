@@ -77,11 +77,27 @@ async function deleteReview(id, reviewId) {
   }
 }
 
+async function updateReview(id, reviewFormData) {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}/reviews`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(reviewFormData)
+    })
+    return res.json()
+  } catch (err) {
+    console.log(err)
+  }
+}
+
 export { 
   getAllProfiles, 
   addPhoto, 
   getProfile,
   createReview,
   deleteReview,
-
+  updateReview,
 }

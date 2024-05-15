@@ -1,6 +1,6 @@
 // npm modules
 import { useState, useRef } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 // services
 import * as authService from '../../services/authService'
@@ -77,10 +77,6 @@ const Signup = ({ handleAuthEvt }) => {
     return !(name && email && password && password === passwordConf)
   }
 
-  const handleBackToAllListings = () => {
-    navigate('/')
-  }
-
   return (
     <div className={styles.mainContainer}>
       <div className={styles.signUpContainer}>
@@ -128,7 +124,7 @@ const Signup = ({ handleAuthEvt }) => {
             />
           </label>
           <div className={styles.buttonContainer}>
-            <p className={styles.cancel} onClick={handleBackToAllListings}>Cancel</p>
+            <NavLink className={styles.cancel} to={`/`}>Cancel</NavLink>
             <button
               className={styles.signUp}
               disabled={ isFormInvalid() || isSubmitted }

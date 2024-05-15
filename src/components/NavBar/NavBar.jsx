@@ -1,6 +1,6 @@
 // npm modules
-import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 import styles from './NavBar.module.css'
 
@@ -8,22 +8,6 @@ import * as profileService from '../../services/profileService'
 
 const NavBar = ({ user, handleLogout }) => {
   const [profile, setProfile] = useState([])
-  const navigate = useNavigate()
-  const handleLogIn = () => {
-    navigate('/auth/login')
-  }
-  const handleSignUp = () => {
-    navigate('auth/signup')
-  }
-  const handleBackToAllListings = () => {
-    navigate('/')
-  }
-  const handleCreateListing = () => {
-    navigate('/listings/new')
-  }
-  const handleUserProfile = () => {
-    navigate(`/profiles/${user.profile}`)
-  }
   useEffect(() => {
     const handleGetProfile = async () => {
       if (user) {
@@ -32,18 +16,19 @@ const NavBar = ({ user, handleLogout }) => {
       }
     }
     handleGetProfile()
-  }, [])
-
+  }, [user])
   return (
     <div className={styles.navContainer}>
-      <div onClick={handleBackToAllListings} className={styles.logoAndAppNameContainer}>
+      <NavLink to={`/`} className={styles.logoAndAppNameContainer}>
         <img className={styles.logo} src='src/assets/images/dittodeal.png' alt="DittoDeal Logo" width='85'/>
         <p className={styles.appNameDitto}>Ditto</p>
         <p className={styles.appNameDeal}>Deal</p>
-      </div>
+      </NavLink>
       <div className={styles.otherLinksContainer}>
         {user ?
-          <p className={styles.createListing} onClick={handleCreateListing}>Create Listing</p>
+        <NavLink to={`/listings/new`}>
+          Create Listing
+        </NavLink>
           :
           ''
         }
@@ -51,12 +36,18 @@ const NavBar = ({ user, handleLogout }) => {
       <div className={styles.avatarAndUserNameContainer}>
         {!user ?
         <>
-          <p className={styles.logIn} onClick={handleLogIn}>Log In</p>
-          <p className={styles.signUp} onClick={handleSignUp}>Sign Up</p>
+          <NavLink to={`/auth/login`}>
+            Log In
+          </NavLink>
+          <NavLink to={`/auth/signup`}>
+            Sign Up
+          </NavLink>
         </>
         :
         <>
-          <p className={styles.userName}  onClick={handleUserProfile}>{user.name}</p>
+          <NavLink to={`/profiles/${user.profile}`}>
+            {profile.name}
+          </NavLink>
           <img className={styles.avatar} src={profile.photo} alt="Users Profile Picture" />
           <i onClick={handleLogout} id={styles.logout} className="fa-solid fa-door-open"></i>
         </>
