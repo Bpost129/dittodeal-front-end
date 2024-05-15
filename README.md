@@ -10,6 +10,7 @@
 ## DittoDeal Link Here
 
 ## Credits
+Scrolling title bar implementation found [here](https://codepen.io/stantonl33/pen/QzMLye)
 
 ## Ice-Box
 - [ ] Sort listings based on a number of factors
