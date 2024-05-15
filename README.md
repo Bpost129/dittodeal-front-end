@@ -11,6 +11,7 @@
 
 ## Contributors
 [Brandon Sears](https://github.com/bS-ui)
+
 [Billy Post](https://github.com/Bpost129)
 
 ## Credits
