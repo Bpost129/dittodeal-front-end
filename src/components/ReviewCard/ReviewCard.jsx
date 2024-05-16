@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import styles from './ReviewCard.module.css'
 
 import { NavLink } from 'react-router-dom'
+import ListingCard from '../ListingCard/ListingCard'
 
 const ReviewCard = ({ review, user, handleDeleteReview, id }) => {
   // const { id } = useParams()
@@ -17,6 +18,9 @@ const ReviewCard = ({ review, user, handleDeleteReview, id }) => {
           <div className={styles.nameAndDate}>
             <h3 className={styles.authorName} onClick={() => navigate(`/profiles/${review.author._id}`)}>{review.author?.name}</h3>
             <p className={styles.reviewCreatedAt}>{`${(new Date(review.createdAt).toDateString())}`}</p>
+          </div>
+          <div className={styles.ratingContainer}>
+            <h1>{review.rating} ⭐</h1>
           </div>
           {review.author?._id === user.profile && 
             <div className={styles.buttonContainer}>
