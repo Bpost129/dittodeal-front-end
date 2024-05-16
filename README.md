@@ -7,7 +7,7 @@
 
 **DittoDeal** is an open marketplace where anyone can find just about anything they're looking for.
 
-<a href="https://dittodeal.netlify.app/" style="color: lilac; font-size: 25px; text-decoration: none;">Shop on DittoDeal</a>
+# [Shop On DittoDeal](https://dittodeal.netlify.app/)
 
 ## Contributors
 [Billy Post](https://github.com/Bpost129)
