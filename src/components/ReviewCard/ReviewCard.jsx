@@ -1,5 +1,5 @@
 // import { useState } from "react"
-// import { useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import styles from './ReviewCard.module.css'
 
@@ -7,6 +7,7 @@ import { NavLink } from 'react-router-dom'
 
 const ReviewCard = ({ review, user, handleDeleteReview, id }) => {
   // const { id } = useParams()
+  const navigate = useNavigate()
 
   return (
     <div className={styles.reviewCard}>
@@ -14,7 +15,7 @@ const ReviewCard = ({ review, user, handleDeleteReview, id }) => {
         <img src={review.author?.photo} alt="users avatar" className={styles.avatar} />
         <div className={styles.infoAndButtonContainer}>
           <div className={styles.nameAndDate}>
-            <h3 className={styles.authorName}>{review.author?.name}</h3>
+            <h3 className={styles.authorName} onClick={() => navigate(`/profiles/${review.author._id}`)}>{review.author?.name}</h3>
             <p className={styles.reviewCreatedAt}>{`${(new Date(review.createdAt).toDateString())}`}</p>
           </div>
           {review.author?._id === user.profile && 

@@ -29,6 +29,7 @@
 
 .authorName {
   margin: 0 0;
+  cursor: pointer;
 }
 
 .reviewCreatedAt {
