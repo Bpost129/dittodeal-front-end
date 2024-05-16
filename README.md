@@ -7,7 +7,7 @@
 
 **DittoDeal** is an open marketplace where anyone can find just about anything they're looking for.
 
-## DittoDeal Link Here
+## [Shop on DittoDeal](https://dittodeal.netlify.app/)
 
 ## Contributors
 [Billy Post](https://github.com/Bpost129)
@@ -19,7 +19,7 @@ Scrolling title bar implementation found [here](https://codepen.io/stantonl33/pe
 
 ## Ice-Box
 - [ ] Sort listings based on a number of factors
-- [ ] Rating functionality
+- [x] Rating functionality
 - [ ] Bidding functionality
 - [ ] Dynamically load reviews, listings or favorites on a profile page via button click
-- [ ] Rework show view
+- [x] Rework show view
