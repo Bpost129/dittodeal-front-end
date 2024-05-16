@@ -14,6 +14,8 @@ const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
   const { id } = useParams()
   const [profile, setProfile] = useState(null)
   const [isFavorite, setIsFavorite] = useState(false)
+  const [total, setTotal] = useState(0)
+  const [avgRating, setAvgRating] = useState(0)
 
   const handleAddReview = async (reviewFormData) => {
     const newReview = await profileService.createReview(id, reviewFormData)
@@ -30,7 +32,6 @@ const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
     // e.preventDefault()
     handleAddFavorite(id)
   }
-
 
   // set an 'isFavorite' property in state, make one function to manipulate it on click of the star
   const handleSetFavorite = async (e) => {
@@ -59,12 +60,13 @@ const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
     fetchProfile()
   }, [id])
 
+
   if (!profile) {
     return (
       <h1>Loading...</h1>
     )
   }
-
+  
   return (
     <div className={styles.mainContainer}>
       <div className={styles.profileContainer}>
@@ -77,9 +79,11 @@ const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
                 {/* <h1 onClick={handleMinusFavorite} style={{cursor: 'pointer'}}>❌</h1> */}
               </div>
             }
-
           </div>
-          
+
+          {profile.reviews.length === 0 && <h1>No Rating</h1>}
+          {profile.reviews.length > 0 && <h1>{avgRating}</h1>}
+
           <img className={styles.avatar} src={profile.photo} alt="users avatar" />
         </div>
         <div className={styles.titlesAndForm}>

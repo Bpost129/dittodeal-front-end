@@ -79,5 +79,14 @@
   text-align: center;
   text-shadow: none;
   color: black;
+  margin: 0;
 }
 
+.ratingContainer {
+  display: flex;
+}
+
+.ratingContainer h1 {
+  margin: 0;
+  font-size: 19px;
+}
