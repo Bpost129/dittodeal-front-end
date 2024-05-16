@@ -32,7 +32,7 @@ const NavBar = ({ user, handleLogout }) => {
         }
       </div>
       <div className={styles.avatarAndUserNameContainer}>
-        {!user ?
+        {/* {!user ? */}
         <>
           <NavLink to={`/auth/login`}>
             Log In
@@ -40,16 +40,16 @@ const NavBar = ({ user, handleLogout }) => {
           <NavLink to={`/auth/signup`}>
             Sign Up
           </NavLink>
+          <i onClick={handleLogout} id={styles.logout} className="fa-solid fa-door-open"></i>
         </>
-        :
+        {/* :
         <>
           <NavLink className={styles.username} to={`/profiles/${user.profile}`}>
             {profile.name}
           </NavLink>
           <div className={styles.avatar} style={{backgroundImage: `url(${profile.photo})`}} alt="Users Profile Picture"></div>
-          <i onClick={handleLogout} id={styles.logout} className="fa-solid fa-door-open"></i>
         </>
-        }
+        } */}
       </div>
     </div>
   )
