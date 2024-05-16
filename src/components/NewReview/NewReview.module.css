@@ -20,6 +20,7 @@
 .reviewText {
   width: 326px;
   height: 75px;
+  padding: 5px 10px;
   border-radius: 10px;
   background-color: #424251;
   color: white;
