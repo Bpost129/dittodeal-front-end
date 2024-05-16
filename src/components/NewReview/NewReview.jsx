@@ -32,11 +32,11 @@ const NewReview = (props) => {
           className={styles.ratingNumber}
           required
           type="number"
-          min="1"
+          min="0"
           max="5"
           name="rating"
           value={formData.rating}
-          placeholder="1-5"
+          placeholder="0-5"
           onChange={handleChange}
         />
         <h1>⭐</h1>

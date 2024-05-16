@@ -14,8 +14,6 @@ const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
   const { id } = useParams()
   const [profile, setProfile] = useState(null)
   const [isFavorite, setIsFavorite] = useState(false)
-  const [total, setTotal] = useState(0)
-  const [avgRating, setAvgRating] = useState(0)
 
   const handleAddReview = async (reviewFormData) => {
     const newReview = await profileService.createReview(id, reviewFormData)
@@ -32,6 +30,7 @@ const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
     // e.preventDefault()
     handleAddFavorite(id)
   }
+
 
   // set an 'isFavorite' property in state, make one function to manipulate it on click of the star
   const handleSetFavorite = async (e) => {
@@ -60,13 +59,12 @@ const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
     fetchProfile()
   }, [id])
 
-
   if (!profile) {
     return (
       <h1>Loading...</h1>
     )
   }
-  
+
   return (
     <div className={styles.mainContainer}>
       <div className={styles.profileContainer}>
@@ -75,14 +73,19 @@ const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
             <h1 className={styles.profileName}>{profile.name}</h1>
             {id !== user.profile && 
               <div style={{display: 'flex', gap: '10px'}}>
-                <h1 onClick={handleSetFavorite} style={{cursor: 'pointer'}}>⭐️</h1>
-                {/* <h1 onClick={handleMinusFavorite} style={{cursor: 'pointer'}}>❌</h1> */}
+                <h1 onClick={handleSetFavorite} style={{cursor: 'pointer'}}><i style={isFavorite ? {color: "#fcd259", textShadow: "0px 0px 5px #fcd259"} : {color: "#333341", textShadow: "0px 0px 5px #fcd259"}} id={styles.star} className="fa-solid fa-star"></i></h1>
               </div>
             }
           </div>
 
-          {profile.reviews.length === 0 && <h1>No Rating</h1>}
-          {profile.reviews.length > 0 && <h1>{avgRating}</h1>}
+          {profile.reviews.length === 0 && <h1 className={styles.stars}><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i></h1>}
+
+          {profile.reviews.length > 0 && profile.avgRating >= 0 && profile.avgRating < .49 && <h1 className={styles.stars}><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i></h1>}
+          {profile.reviews.length > 0 && profile.avgRating > .49 && profile.avgRating < 1.49 && <h1 className={styles.stars}><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i></h1>}
+          {profile.reviews.length > 0 && profile.avgRating > 1.49 && profile.avgRating < 2.49 && <h1 className={styles.stars}><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i></h1>}
+          {profile.reviews.length > 0 && profile.avgRating > 2.49 && profile.avgRating < 3.49 && <h1 className={styles.stars}><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i></h1>}
+          {profile.reviews.length > 0 && profile.avgRating > 3.49 && profile.avgRating < 4.49 && <h1 className={styles.stars}><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i></h1>}
+          {profile.reviews.length > 0 && profile.avgRating > 4.49 && profile.avgRating <= 5 && <h1 className={styles.stars}><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i></h1>}
 
           <img className={styles.avatar} src={profile.photo} alt="users avatar" />
         </div>
@@ -94,6 +97,7 @@ const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
         </div>
         <div className={styles.reviewsListingsAndFavorites}>
           <div className={styles.listings}>
+          {!profile.listings.length && <h4>No Listings</h4>}
             {profile.listings.map(listing => 
               <div className={styles.listing} key={listing._id}>
                 <div>
@@ -120,9 +124,11 @@ const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
             )}
           </div>
           <div className={styles.reviews}>
+          {!profile.reviews.length && <h4>No Reviews</h4>}
             <Reviews profile={profile} user={user} id={id} handleDeleteReview={handleDeleteReview} />
           </div>
           <div className={styles.favorites}>
+          {!profile.favorites.length && <h4>No Favorites</h4>}
             {profile.favorites.map(favorite => 
               <div className={styles.listing} key={favorite._id}>
                 <div className={styles.favoriteListing}>
@@ -133,9 +139,6 @@ const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
                 </div>
               </div>
             )}
-
-
-
           </div>
         </div>
       </div>
