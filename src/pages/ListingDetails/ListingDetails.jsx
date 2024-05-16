@@ -39,7 +39,7 @@ const ListingDetails = (props) => {
             <h1 onClick={handleShowProfile} className={styles.name}>{listing.author.name}</h1>
           </div>
           <div className={styles.sellerButtons}>
-            {listing.author._id === props.user.profile &&
+            {(listing.author._id === props.user.profile || props.user.accountLevel === 2) &&
             <div className={styles.editButtons}>
               <NavLink to={`/listings/${listingId}/edit`} state={listing} className={styles.edit}>
                 EDIT
