@@ -20,14 +20,21 @@
   font-weight: 600;
 }
 
+.editReview {
+  text-shadow: 3px 3px black;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 550;
+}
+
 .reviewText {
   width: 350px;
   height: 150px;
   border-radius: 10px;
-  background-color: #222230;
+  background-color: #333341;
   color: white;
   border: 5px solid #fcd259;
   font-size: 16px;
+  margin: 0 15px;
 }
 
 .mainContainer {
@@ -41,7 +48,7 @@
   flex-direction: column;
   align-items: center;
   border: 5px solid #fcd259;
-  background-color: #333341;
+  background-color: #424251;
   border-radius: 15px;
   margin: 20px 0px 0px 0px;
   padding: 20px;

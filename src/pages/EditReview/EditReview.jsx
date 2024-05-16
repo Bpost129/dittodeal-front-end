@@ -26,7 +26,7 @@ const EditReview = () => {
   return (
       <div className={styles.mainContainer}>
         <div className={styles.editReviewContainer}>
-          <h1>Edit Review</h1>
+          <h1 className={styles.editReview}>Edit Review</h1>
           <form onSubmit={handleSubmit} className={styles.reviewForm} >
             <textarea 
               className={styles.reviewText}

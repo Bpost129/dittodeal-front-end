@@ -19,6 +19,9 @@
 }
 
 .profileName {
+  text-shadow: 3px 3px black;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 550;
   font-size: 75px;
   color: #fcd259;
   cursor:default;
@@ -73,6 +76,9 @@
 }
 
 .listingsTitle, .favoritesTitle {
+  text-shadow: 3px 3px black;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 550;
   width: 200px;
   text-align: center;
 }
@@ -82,6 +88,9 @@
 } */
 
 .reviewsTitle {
+  text-shadow: 3px 3px black;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 550;
   width: 350px;
   text-align: center;
 }
@@ -134,3 +143,4 @@
   height: 42px;
   width: 49px;
 }
+

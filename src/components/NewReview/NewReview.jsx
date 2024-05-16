@@ -28,20 +28,22 @@ const NewReview = (props) => {
           onChange={handleChange}
         />
         <div className={styles.ratingContainer}>
-        <input 
-          className={styles.ratingNumber}
-          required
-          type="number"
-          min="0"
-          max="5"
-          name="rating"
-          value={formData.rating}
-          placeholder="0-5"
-          onChange={handleChange}
-        />
-        <h1>⭐</h1>
+          <h1><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i></h1>
+          <input 
+            className={styles.ratingNumber}
+            required
+            type="number"
+            min="0"
+            max="5"
+            name="rating"
+            value={formData.rating}
+            placeholder="0-5"
+            onChange={handleChange}
+          />
+          <div>
+            <button type='submit' className={styles.reviewButton}>POST</button>
+          </div>
         </div>
-        <button type='submit' className={styles.reviewButton}>POST</button>
       </form>
   )
 }

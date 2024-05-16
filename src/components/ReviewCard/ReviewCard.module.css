@@ -84,6 +84,7 @@
 
 .ratingContainer {
   display: flex;
+  gap: 10px;
 }
 
 .ratingContainer h1 {

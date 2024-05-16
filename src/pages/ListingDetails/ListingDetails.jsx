@@ -75,18 +75,18 @@ const ListingDetails = (props) => {
             </div>
               <h3 
                 className={styles.listingCategory}
-                style={listing.category === "Vehicles" ? {backgroundColor: "rgba(255, 148, 148, .6)"} 
-                : listing.category === "Apparel" ? {backgroundColor: "rgba(255, 227, 127, .6)"}
-                : listing.category === "Electronics" ? {backgroundColor: "rgba(127, 255, 195, .6)"}
-                : listing.category === "Entertainment" ? {backgroundColor: "rgba(254, 146, 209, .6)"}
-                : listing.category === "Garden & Outdoor" ? {backgroundColor: "rgba(115, 255, 148, .6)"}
-                : listing.category === "Home Goods" ? {backgroundColor: "rgba(250, 255, 125, .6)"}
-                : listing.category === "Home Improvement" ? {backgroundColor: "rgba(255, 184, 85, .6)"}
-                : listing.category === "Music" ? {backgroundColor: "rgba(229, 127, 255, .6)"}
-                : listing.category === "Office Supplies" ? {backgroundColor: "rgba(255, 127, 127, .6)"}
-                : listing.category === "Pet Supplies" ? {backgroundColor: "rgba(127, 253, 255, .6)"}
-                : listing.category === "Sporting Goods" ? {backgroundColor: "rgba(196, 254, 146, .6)"}
-                : {backgroundColor: "rgba(146, 173, 254, .6)"}
+                style={listing.category === "Vehicles" ? {backgroundColor: "rgba(255, 148, 148, .8)"} 
+                : listing.category === "Apparel" ? {backgroundColor: "rgba(255, 227, 127, .8)"}
+                : listing.category === "Electronics" ? {backgroundColor: "rgba(127, 255, 195, .8)"}
+                : listing.category === "Entertainment" ? {backgroundColor: "rgba(254, 146, 209, .8)"}
+                : listing.category === "Garden & Outdoor" ? {backgroundColor: "rgba(115, 255, 148, .8)"}
+                : listing.category === "Home Goods" ? {backgroundColor: "rgba(250, 255, 125, .8)"}
+                : listing.category === "Home Improvement" ? {backgroundColor: "rgba(255, 184, 85, .8)"}
+                : listing.category === "Music" ? {backgroundColor: "rgba(229, 127, 255, .8)"}
+                : listing.category === "Office Supplies" ? {backgroundColor: "rgba(255, 127, 127, .8)"}
+                : listing.category === "Pet Supplies" ? {backgroundColor: "rgba(127, 253, 255, .8)"}
+                : listing.category === "Sporting Goods" ? {backgroundColor: "rgba(196, 254, 146, .8)"}
+                : {backgroundColor: "rgba(146, 173, 254, .8)"}
               }>
                 {listing.category}
               </h3>
@@ -115,8 +115,13 @@ const ListingDetails = (props) => {
       <div className={styles.allReviews}>
         {listing.author.reviews.map(review =>
           <div key={review._id} className={styles.reviewCard}>
-            <p className={styles.reviewCreatedAt}>{`${(new Date(review.createdAt).toLocaleDateString())}`}</p>    
-            <p className={styles.reviewText}>{review.text}</p>
+            <div className={styles.nameAndCreateContainer}>
+              <p className={styles.reviewCreatedAt}>{`${(new Date(review.createdAt).toLocaleDateString())}`}</p>    
+              <h3>{review.rating} <i className="fa-solid fa-star" style={{color: "#fcd259"}}></i></h3>
+            </div>
+            <div className={styles.ratingContainer}>
+              <p className={styles.reviewText}>{review.text}</p>
+            </div>
           </div>
         )}
       </div>
