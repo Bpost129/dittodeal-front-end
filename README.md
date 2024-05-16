@@ -1,4 +1,4 @@
-# DittoDeal ![dittodeal](https://github.com/Bpost129/dittodeal-front-end/assets/54043400/bdee41f4-b643-4e78-98c9-d77fc1d04d99)
+# DittoDeal
 
 
 <img width="2316" alt="Screenshot 2024-05-14 at 8 50 41 PM" src="https://github.com/Bpost129/dittodeal-front-end/assets/54043400/c79c28ff-24a3-443f-853d-ef51478e5cd3">
