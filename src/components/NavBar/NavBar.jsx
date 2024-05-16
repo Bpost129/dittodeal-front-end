@@ -43,10 +43,10 @@ const NavBar = ({ user, handleLogout }) => {
         </>
         :
         <>
-          <NavLink to={`/profiles/${user.profile}`}>
+          <NavLink className={styles.username} to={`/profiles/${user.profile}`}>
             {profile.name}
           </NavLink>
-          <img className={styles.avatar} src={profile.photo} alt="Users Profile Picture" />
+          <div className={styles.avatar} style={{backgroundImage: `url(${profile.photo})`}} alt="Users Profile Picture"></div>
           <i onClick={handleLogout} id={styles.logout} className="fa-solid fa-door-open"></i>
         </>
         }

@@ -13,6 +13,7 @@ import styles from './ProfilePage.module.css'
 const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
   const { id } = useParams()
   const [profile, setProfile] = useState(null)
+  const [isFavorite, setIsFavorite] = useState(false)
 
   const handleAddReview = async (reviewFormData) => {
     const newReview = await profileService.createReview(id, reviewFormData)
@@ -25,13 +26,27 @@ const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
     setProfile({...profile, reviews: profile.reviews.filter(rev => rev._id !== reviewId)})
   }
 
-  const handlePlusFavorite = e => {
-    e.preventDefault()
+  const handlePlusFavorite = () => {
+    // e.preventDefault()
     handleAddFavorite(id)
   }
 
-  const handleMinusFavorite = e => {
+
+  // set an 'isFavorite' property in state, make one function to manipulate it on click of the star
+  const handleSetFavorite = async (e) => {
     e.preventDefault()
+    if (isFavorite) {
+      handleMinusFavorite()
+      setIsFavorite(false)
+    } else {
+      handlePlusFavorite()
+      setIsFavorite(true)
+    }
+
+  }
+
+  const handleMinusFavorite = () => {
+    // e.preventDefault()
     handleRemoveFavorite(id)
   }
 
@@ -58,8 +73,8 @@ const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
             <h1 className={styles.profileName}>{profile.name}</h1>
             {id !== user.profile && 
               <div style={{display: 'flex', gap: '10px'}}>
-                <h1 onClick={handlePlusFavorite} style={{cursor: 'pointer'}}>⭐️</h1>
-                <h1 onClick={handleMinusFavorite} style={{cursor: 'pointer'}}>❌</h1>
+                <h1 onClick={handleSetFavorite} style={{cursor: 'pointer'}}>⭐️</h1>
+                {/* <h1 onClick={handleMinusFavorite} style={{cursor: 'pointer'}}>❌</h1> */}
               </div>
             }
 
