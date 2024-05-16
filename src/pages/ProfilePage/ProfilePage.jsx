@@ -9,7 +9,8 @@ import * as profileService from '../../services/profileService'
 
 import styles from './ProfilePage.module.css'
 
-const ProfilePage = ({ user }) => {
+
+const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
   const { id } = useParams()
   const [profile, setProfile] = useState(null)
 
@@ -22,6 +23,16 @@ const ProfilePage = ({ user }) => {
     console.log(id)
     await profileService.deleteReview(profileId, reviewId)
     setProfile({...profile, reviews: profile.reviews.filter(rev => rev._id !== reviewId)})
+  }
+
+  const handlePlusFavorite = e => {
+    e.preventDefault()
+    handleAddFavorite(id)
+  }
+
+  const handleMinusFavorite = e => {
+    e.preventDefault()
+    handleRemoveFavorite(id)
   }
 
   useEffect(() => {
@@ -43,12 +54,23 @@ const ProfilePage = ({ user }) => {
     <div className={styles.mainContainer}>
       <div className={styles.profileContainer}>
         <div className={styles.imageAndName}>
-          <h1 className={styles.profileName}>{profile.name}</h1>
+          <div className={styles.favoriteSelect}>
+            <h1 className={styles.profileName}>{profile.name}</h1>
+            {id !== user.profile && 
+              <div style={{display: 'flex', gap: '10px'}}>
+                <h1 onClick={handlePlusFavorite} style={{cursor: 'pointer'}}>⭐️</h1>
+                <h1 onClick={handleMinusFavorite} style={{cursor: 'pointer'}}>❌</h1>
+              </div>
+            }
+
+          </div>
+          
           <img className={styles.avatar} src={profile.photo} alt="users avatar" />
         </div>
         <div className={styles.titlesAndForm}>
           <h1 className={styles.listingsTitle}>Listings</h1>
-          <NewReview handleAddReview={handleAddReview} />
+          {id !== user.profile && <NewReview handleAddReview={handleAddReview} />}
+          {id === user.profile && <h1 className={styles.reviewsTitle}>Reviews</h1>}
           <h1 className={styles.favoritesTitle}>Favorites</h1>
         </div>
         <div className={styles.reviewsListingsAndFavorites}>
@@ -78,17 +100,23 @@ const ProfilePage = ({ user }) => {
               </div>
             )}
           </div>
-          <div>
+          <div className={styles.reviews}>
             <Reviews profile={profile} user={user} id={id} handleDeleteReview={handleDeleteReview} />
           </div>
           <div className={styles.favorites}>
             {profile.favorites.map(favorite => 
               <div className={styles.listing} key={favorite._id}>
-                <div>
-                  <NavLink to={`/listings}`}>funny link</NavLink>
+                <div className={styles.favoriteListing}>
+                  <NavLink to={`/profiles/${favorite._id}`} className={styles.favoriteListing}>
+                    <img src={favorite.photo} alt="favorites avatar" className={styles.favoriteImage} />
+                    {favorite.name}
+                    </NavLink>
                 </div>
               </div>
             )}
+
+
+
           </div>
         </div>
       </div>

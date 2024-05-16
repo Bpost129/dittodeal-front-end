@@ -93,6 +93,35 @@ async function updateReview(id, reviewFormData) {
   }
 }
 
+async function addFavorite(id) {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      }
+    })
+    return res.json()
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+async function removeFavorite(id) {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+      }
+    })
+    return res.json()
+  } catch (err) {
+    console.log(err)
+  }
+}
+
 export { 
   getAllProfiles, 
   addPhoto, 
@@ -100,4 +129,6 @@ export {
   createReview,
   deleteReview,
   updateReview,
+  addFavorite,
+  removeFavorite,
 }

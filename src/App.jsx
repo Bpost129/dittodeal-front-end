@@ -20,6 +20,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as profileService from './services/profileService'
 import * as listingService from './services/listingService'
 
 // styles
@@ -28,6 +29,7 @@ import './App.css'
 function App() {
   const [user, setUser] = useState(authService.getUser())
   const [listings, setListings] = useState([])
+  const [favorites, setFavorites] = useState([])
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -58,6 +60,18 @@ function App() {
     navigate('/listings')
   }
 
+  const handleAddFavorite = async (id) => {
+    const newFavorite = await profileService.addFavorite(id)
+    setFavorites([newFavorite, ...favorites])
+    navigate(`/profiles/${user.profile}`)
+  }
+
+  const handleRemoveFavorite = async (id) => {
+    const deletedFavorite = await profileService.removeFavorite(id)
+    setFavorites(favorites.filter(fa => fa._id !== deletedFavorite._id))
+    navigate(`/profiles/${user.profile}`)
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -82,7 +96,7 @@ function App() {
         <Route 
           path='/profiles/:id' element={
             <ProtectedRoute user={user}>
-              <ProfilePage user={user} />
+              <ProfilePage user={user} handleAddFavorite={handleAddFavorite} handleRemoveFavorite={handleRemoveFavorite} />
             </ProtectedRoute>
           }
         />

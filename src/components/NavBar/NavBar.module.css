@@ -90,6 +90,8 @@
   align-items: center;
   justify-content: center;
   height: 85px;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .avatar {
@@ -107,7 +109,7 @@ a {
   font-weight: 550;
   font-size: 30px;
   cursor: pointer;
-  margin: 0px 20px 0px 0px;
+  margin: 0px 40px 0px 0px;
   color: white;
   text-decoration: none;
 }

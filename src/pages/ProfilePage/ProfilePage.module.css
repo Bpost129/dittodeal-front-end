@@ -12,9 +12,16 @@
   justify-content: center;
 }
 
+.favoriteSelect {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .profileName {
   font-size: 50px;
   color: #fcd259;
+  cursor:default;
 }
 
 .avatar {
@@ -39,8 +46,9 @@
 
 .reviews {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
+  width: 350px;
 }
 
 .reviewForm {
@@ -76,10 +84,35 @@
   text-align: center;
 }
 
+/* .reviews {
+  width: 350px;
+} */
+
+.reviewsTitle {
+  width: 350px;
+  text-align: center;
+}
+
 .listings, .favorites {
   margin-top: 15px;
+  width: 350px;
 }
 
 .listing a {
   text-shadow: 1px 2px 2px black;
+  text-align: center;
+  margin: 0;
+}
+
+.favoriteListing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.favoriteImage {
+  height: 75px;
+  width: 75px;
+  border-radius: 5px;
+  margin: 5px 0;
 }
