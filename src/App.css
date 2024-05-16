@@ -22,11 +22,6 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-/* a,
-a:visited {
-  color: black
-} */
-
 nav > ul {
   margin: 0;
   padding: 16px 32px;

@@ -24,7 +24,6 @@
 
 .authorDiv {
   display: flex;
-  /* margin-top: 5px */
 }
 
 .authorName {
@@ -49,8 +48,6 @@
   border: 2px solid #fcd259;
   background: rgb(221,210,1);
   background: linear-gradient(180deg, rgba(221,210,1,1) 0%, rgba(236,217,1,1) 50%, rgba(148,148,1,1) 100%);
-  /* background: rgb(206,206,206);
-  background: linear-gradient(180deg, rgba(206,206,206,1) 0%, rgba(225,225,225,1) 50%, rgba(148,148,148,1) 100%); */
   font-weight: 500;
   font-size: 12px;
 }
