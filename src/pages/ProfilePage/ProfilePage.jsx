@@ -77,7 +77,7 @@ const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
               </div>
             }
           </div>
-
+          {/* this  */}
           {profile.reviews.length === 0 && <h1 className={styles.stars}><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i></h1>}
 
           {profile.reviews.length > 0 && profile.avgRating >= 0 && profile.avgRating < .49 && <h1 className={styles.stars}><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i></h1>}

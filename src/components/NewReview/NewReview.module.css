@@ -10,7 +10,9 @@
   width: 75px;
   height: 30px;
   border-radius: 20px;
-  margin-top: 5px;
+  
+  margin-left: 145px;
+  
   /* background: rgb(206,206,206);
   background: linear-gradient(180deg, rgba(206,206,206,1) 0%, rgba(225,225,225,1) 50%, rgba(148,148,148,1) 100%);
   border: 3px solid rgb(131, 131, 131); */
@@ -24,7 +26,7 @@
   width: 326px;
   height: 75px;
   border-radius: 10px;
-  background-color: #333341;
+  background-color: #424251;
   color: white;
   border: 5px solid #fcd259;
 }
@@ -33,9 +35,9 @@
   width: 45px;
   height: 25px;
   border-radius: 10px;
-  background-color: #333341;
+  background-color: #424251;
   color: white;
-  border: 5px solid #fcd259;
+  border: 3px solid #fcd259;
   margin: 0;
 }
 
@@ -43,6 +45,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 }
 
 .ratingContainer h1 {
