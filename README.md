@@ -17,6 +17,7 @@
 
 ## Credits
 Scrolling title bar implementation found [here](https://codepen.io/stantonl33/pen/QzMLye)
+
 FreeCodeCamp has a great [tutorial](https://www.freecodecamp.org/news/css-scrollbar-tutorial/) on scrollbar styling
 
 ## Ice-Box
