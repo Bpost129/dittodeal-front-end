@@ -63,15 +63,11 @@ const ListingDetails = (props) => {
           <div className={styles.images}>
           <div className={styles.listingImageBigBg}>
             <div className={styles.listingImageBg}>
-
-              
               <div 
                 className={styles.listingImage}
                 onClick={() => setShowModal(true)}
                 style={{backgroundImage: `url(${listing.photos[0]})`, cursor: 'pointer'}} alt="Listing Picture" 
               >
-              
-
               </div>
             </div>
           </div>
