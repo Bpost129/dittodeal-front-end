@@ -1,6 +1,7 @@
 # DittoDeal
 
-<img width="2236" alt="Screenshot 2024-05-16 at 10 18 07 PM" src="https://github.com/Bpost129/dittodeal-front-end/assets/54043400/eb7a1528-99bc-46d9-af86-4700dbd19176">
+<img width="2241" alt="Screenshot 2024-05-16 at 11 37 44 PM" src="https://github.com/Bpost129/dittodeal-front-end/assets/54043400/3e422c61-c3e1-4fa6-b153-afe191780109">
+
 
 <img width="1908" alt="Screenshot 2024-05-16 at 10 45 47 PM" src="https://github.com/Bpost129/dittodeal-front-end/assets/54043400/26e7c75c-a647-477f-aeb2-87605a5428ef">
 
@@ -26,6 +27,8 @@ Scrolling title bar implementation found [here](https://codepen.io/stantonl33/pe
 FreeCodeCamp has a great [tutorial](https://www.freecodecamp.org/news/css-scrollbar-tutorial/) on scrollbar styling
 
 Is it a [Modal](https://dev.to/adetutu/how-to-implement-a-modal-component-with-react-18bi) or just a regular old component
+
+Listing card backgrounds provided by [Brandon](https://github.com/bS-ui) the photoshop prodigy
 
 ## Ice-Box
 - [ ] Sort listings based on a number of factors
