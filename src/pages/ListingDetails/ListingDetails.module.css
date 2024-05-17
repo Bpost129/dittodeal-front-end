@@ -14,7 +14,7 @@
   border-radius: 15px;
   margin: 20px 0px 0px 0px;
   font-family: "Quicksand";
-  width: 675px;
+  width: 700px;
 }
 
 .sellerContainer {
@@ -32,6 +32,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  text-shadow: 2px 2px 2px black;
 }
 
 .name {
@@ -48,7 +49,7 @@
 }
 
 .listingImage {
-  width: 300px; 
+  width: 350px; 
   height: 350px;
   background-color: white;
   background-position: center center;
@@ -125,7 +126,7 @@
 }
 
 .description {
-  width: 660px;
+  width: 685px;
   margin: 20px 0 0 0;
   padding: 8px 8px;
   border-radius: 0 0 12px 12px;

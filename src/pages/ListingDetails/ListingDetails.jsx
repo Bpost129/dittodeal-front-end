@@ -6,6 +6,7 @@ import Modal from '../../components/Modal/Modal'
 import * as listingService from '../../services/listingService'
 
 import styles from './ListingDetails.module.css'
+import pokeball from '../../assets/images/pokeball.png'
 
 const ListingDetails = (props) => {
   const { listingId } = useParams()
@@ -44,6 +45,7 @@ const ListingDetails = (props) => {
         <div className={styles.sellerContainer}>
           <div className={styles.sellerName}>
             <h1>Seller: </h1>
+            <img src={pokeball} alt="pokeball" style={{width: '45px', height: '45px'}}/>
             <h1 onClick={handleShowProfile} className={styles.name}>{listing.author.name}</h1>
           </div>
           <div className={styles.sellerButtons}>
