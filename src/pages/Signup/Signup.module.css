@@ -13,6 +13,18 @@ p {
   padding: 4px 8px 4px 8px;
 }
 
+.input[type="file"]::file-selector-button {
+  color: #fcd259;
+  height: 25px;
+  /* border: 1px solid rgb(222, 222, 222); */
+  border-radius: 5px;
+  box-shadow: none;
+  font-weight: 550;
+  background-color: #4e4e5f;
+  cursor: pointer;
+  width: 150px;
+}
+
 .mainContainer {
   display: flex;
   align-items: center;
