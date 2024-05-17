@@ -12,10 +12,10 @@
 }
 
 .modalImage {
-  min-height: 400px;
-  min-width: 600px;
+  min-height: 500px;
+  min-width: 700px;
   max-height: 800px;
-  max-width: 1250px;
+  max-width: 1000px;
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
