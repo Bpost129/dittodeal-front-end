@@ -37,3 +37,6 @@ Listing card backgrounds provided by [Brandon](https://github.com/bS-ui) the pho
 - [ ] Dynamically load reviews, listings or favorites on a profile page via button click
 - [x] Rework show view
 - [ ] Allow multiple image uploads
+
+### Other Materials
+[Backend Repo](https://github.com/Bpost129/dittodeal-back-end), [Trello Board](https://trello.com/b/q2n3vv3v/dittodeal)
