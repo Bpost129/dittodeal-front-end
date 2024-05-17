@@ -2,7 +2,8 @@
 
 <img width="2236" alt="Screenshot 2024-05-16 at 10 18 07 PM" src="https://github.com/Bpost129/dittodeal-front-end/assets/54043400/eb7a1528-99bc-46d9-af86-4700dbd19176">
 
-<img width="2240" alt="Screenshot 2024-05-16 at 10 30 56 PM" src="https://github.com/Bpost129/dittodeal-front-end/assets/54043400/7729dcf3-e8a1-45ef-a70e-9413d88a5cce">
+<img width="1908" alt="Screenshot 2024-05-16 at 10 45 47 PM" src="https://github.com/Bpost129/dittodeal-front-end/assets/54043400/26e7c75c-a647-477f-aeb2-87605a5428ef">
+
 
 
 
@@ -32,3 +33,4 @@ Is it a [Modal](https://dev.to/adetutu/how-to-implement-a-modal-component-with-r
 - [ ] Bidding functionality
 - [ ] Dynamically load reviews, listings or favorites on a profile page via button click
 - [x] Rework show view
+- [ ] Allow multiple image uploads
