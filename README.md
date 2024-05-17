@@ -17,9 +17,9 @@
 # [Shop On DittoDeal](https://dittodeal.netlify.app/)
 
 ## Contributors
-[Billy Post](https://github.com/Bpost129)
+**[Billy Post](https://github.com/Bpost129)**
 
-[Brandon Sears](https://github.com/bS-ui)
+**[Brandon Sears](https://github.com/bS-ui)**
 
 ## Credits
 Scrolling title bar implementation found [here](https://codepen.io/stantonl33/pen/QzMLye)
