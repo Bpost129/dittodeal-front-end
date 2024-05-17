@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import { useParams, NavLink, useNavigate } from "react-router-dom"
 
+import Modal from '../../components/Modal/Modal'
+
 import * as listingService from '../../services/listingService'
 
 import styles from './ListingDetails.module.css'
@@ -9,6 +11,12 @@ const ListingDetails = (props) => {
   const { listingId } = useParams()
   const [listing, setListing] = useState(null)
   const navigate = useNavigate()
+
+  const [showModal, setShowModal] = useState(false)
+
+  const handleClose = () => {
+    setShowModal(false)
+  }
 
   const handleShowProfile = () => {
     navigate(`/profiles/${listing.author._id}`)
@@ -31,6 +39,7 @@ const ListingDetails = (props) => {
 
   return (
     <main className={styles.mainContainer}>
+      {showModal && <Modal photo={listing.photos[0]} handleClose={handleClose} />}
       <div className={styles.listingContainer} key={listing._id}>
         <div className={styles.sellerContainer}>
           <div className={styles.sellerName}>
@@ -55,10 +64,11 @@ const ListingDetails = (props) => {
 
               
               <div 
-                className={styles.listingImage} 
-                style={{backgroundImage: `url(${listing.photos[0]})`}} alt="Listing Picture" 
+                className={styles.listingImage}
+                onClick={() => setShowModal(true)}
+                style={{backgroundImage: `url(${listing.photos[0]})`, cursor: 'pointer'}} alt="Listing Picture" 
               >
-
+              
 
               </div>
             </div>
