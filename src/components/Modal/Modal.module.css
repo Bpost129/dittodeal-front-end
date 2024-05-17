@@ -1,0 +1,36 @@
+.modalBackground {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 900px;
+  width: 1250px;
+  background-color: rgba(50, 50, 50, 0.9);
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.modalImage {
+  min-height: 400px;
+  min-width: 600px;
+  max-height: 800px;
+  max-width: 1250px;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.close {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 550;
+  margin-top: 5px;
+  width: 80px;
+  height: 30px;
+  background-color: #fcd259;
+  border-radius: 5px;
+}
+
+.close:hover {
+  background-color: #ceab43;
+}
