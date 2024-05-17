@@ -56,10 +56,14 @@ const ListingDetails = (props) => {
 
           <div className={styles.listingImageBigBg}>
             <div className={styles.listingImageBg}>
+
+              
               <div 
                 className={styles.listingImage} 
                 style={{backgroundImage: `url(${listing.photos[0]})`}} alt="Listing Picture" 
               >
+
+
               </div>
             </div>
           </div>
