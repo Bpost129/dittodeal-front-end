@@ -42,7 +42,7 @@ function App() {
     setUser(authService.getUser())
   }
 
-  const handleAddListing = async listingFormData => {
+  const handleAddListing = async (listingFormData) => {
     const newListing = await listingService.create(listingFormData)
     setListings([newListing, ...listings])
     navigate('/listings')

@@ -32,7 +32,6 @@ const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
   }
 
 
-  // set an 'isFavorite' property in state, make one function to manipulate it on click of the star
   const handleSetFavorite = async (e) => {
     e.preventDefault()
     if (isFavorite) {
@@ -42,7 +41,6 @@ const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
       handlePlusFavorite()
       setIsFavorite(true)
     }
-
   }
 
   const handleMinusFavorite = () => {
@@ -77,9 +75,9 @@ const ProfilePage = ({ user, handleAddFavorite, handleRemoveFavorite }) => {
               </div>
             }
           </div>
-          {/* this  */}
+          
+          {/* this block renders the stars representing the profiles average rating */}
           {profile.reviews.length === 0 && <h1 className={styles.stars}><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i></h1>}
-
           {profile.reviews.length > 0 && profile.avgRating >= 0 && profile.avgRating < .49 && <h1 className={styles.stars}><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i></h1>}
           {profile.reviews.length > 0 && profile.avgRating > .49 && profile.avgRating < 1.49 && <h1 className={styles.stars}><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i></h1>}
           {profile.reviews.length > 0 && profile.avgRating > 1.49 && profile.avgRating < 2.49 && <h1 className={styles.stars}><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i><i className="fa-solid fa-star" style={{color: "#fcd259"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i><i className="fa-solid fa-star" style={{color: "#333341"}}></i></h1>}

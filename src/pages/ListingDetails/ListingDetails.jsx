@@ -4,7 +4,6 @@ import { useParams, NavLink, useNavigate } from "react-router-dom"
 import * as listingService from '../../services/listingService'
 
 import styles from './ListingDetails.module.css'
-// import pokeball from '../../assets/images/pokeball.png'
 
 const ListingDetails = (props) => {
   const { listingId } = useParams()
@@ -49,11 +48,8 @@ const ListingDetails = (props) => {
             }
           </div>
         </div>
-
         <div className={styles.headingContainer}>
-
           <div className={styles.images}>
-
           <div className={styles.listingImageBigBg}>
             <div className={styles.listingImageBg}>
 
@@ -67,12 +63,7 @@ const ListingDetails = (props) => {
               </div>
             </div>
           </div>
-
-
-            {/* <div className={styles.listingImage}><div className={styles.listingImageBg}><img src={listing.photos[0]} alt="listing photo" style={{width: '250px', height: '300px', backgroundColor: 'white'}} /></div></div> */}
-          
           </div>
-
           <div className={styles.titleAndInfo}>
             <div className={styles.title}>
               <h2 className={styles.listingTitle}><span>{listing.title}</span></h2>
@@ -94,7 +85,6 @@ const ListingDetails = (props) => {
               }>
                 {listing.category}
               </h3>
-
             <div className={styles.info}>
               <div className={styles.priceContainer}>
                 <h2 className={styles.priceTitle}>Price:</h2>
@@ -106,13 +96,10 @@ const ListingDetails = (props) => {
               </div>
             </div>
           </div>
-
         </div>
-
         <div className={styles.description}>
           <p className={styles.descriptionText}>{listing.description}</p>
         </div>
-      
       </div>
       
       <h2>Seller Reviews:</h2>

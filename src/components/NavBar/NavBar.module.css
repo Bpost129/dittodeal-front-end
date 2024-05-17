@@ -38,7 +38,6 @@
   align-items: center;
   justify-content: end;
   height: 85px;
-  /* width: 300px; */
   margin: 0px 20px 0px 0px;
 }
 
@@ -115,5 +114,4 @@ a {
   margin: 0px 30px 0px 0px;
   color: white;
   text-decoration: none;
-  /* text-wrap:nowrap; */
 }
