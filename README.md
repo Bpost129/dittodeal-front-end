@@ -28,6 +28,8 @@ FreeCodeCamp has a great [tutorial](https://www.freecodecamp.org/news/css-scroll
 
 Is it a [Modal](https://dev.to/adetutu/how-to-implement-a-modal-component-with-react-18bi) or just a regular old component
 
+Listing card backgrounds provided by [Brandon](https://github.com/bS-ui) the photoshop prodigy
+
 ## Ice-Box
 - [ ] Sort listings based on a number of factors
 - [x] Rating functionality
